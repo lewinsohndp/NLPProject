@@ -7,6 +7,8 @@ import utilities
 from tqdm import tqdm
 import pickle
 
+"""Script to run masked lm task"""
+
 model, alphabet = torch.hub.load("facebookresearch/esm:main", "esm1b_t33_650M_UR50S")
 seqids, fastas = uniprot.read_fasta('/Users/daniel/desktop/cp341/uniprot_sprot.fasta')
 

@@ -6,6 +6,8 @@ import uniprot
 import utilities
 from tqdm import tqdm
 
+"""Script to generate embeddings of sequences from esm-1b model"""
+
 seqids, fastas = uniprot.read_fasta('/Users/daniel/desktop/cp341/uniprot_sprot.fasta')
 model, alphabet = torch.hub.load("facebookresearch/esm:main", "esm1b_t33_650M_UR50S")
 # get human proteins

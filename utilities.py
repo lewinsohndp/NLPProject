@@ -28,6 +28,8 @@ def mask_seq(seq):
     return new_seqs
 
 def forward_pass(model, alphabet, seqs):
+    """forward pass all the way to target layer"""
+
     batch_converter = alphabet.get_batch_converter()
     model.eval()  # disables dropout for deterministic results
     data = [("blah", x) for x in seqs]
@@ -41,6 +43,8 @@ def forward_pass(model, alphabet, seqs):
     return results["logits"]
 
 def forward_pass_embed(model, alphabet, seqs):
+    """forward pass to embedding layer"""
+    
     batch_converter = alphabet.get_batch_converter()
     model.eval()  # disables dropout for deterministic results
     data = [("blah", x) for x in seqs]
